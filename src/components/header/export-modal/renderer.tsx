@@ -43,7 +43,7 @@ class ExportModal extends React.PureComponent<Props, State> {
     const dlButton = this.refs.downloadPDF as any;
     dlButton.classList.add('disabled');
     const content = this.props.mode === Mode.Vega ? this.props.vegaSpec : this.props.vegaLiteSpec;
-    const pdf = await fetch('https://vega-render-service.now.sh', {
+    const pdf = await fetch('https://render-vega.now.sh', {
       body: JSON.stringify(content),
       headers: {
         'Content-Type': 'application/json',
